@@ -6,19 +6,33 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>🎥 Tonton Video</h1>
-    <a href="index.html">Kembali</a>
+    <div class="container">
+      <h1>🎥 Nonton Video</h1>
+      <a href="index.html" class="btn back-btn">⬅️ Kembali</a>
+    </div>
   </header>
 
-  <div class="player">
-    <video controls width="100%">
-      <source src="assets/videos/video1.mp4" type="video/mp4">
-      Browser Anda tidak mendukung video.
-    </video>
-    <h2 id="videoTitle">Judul Video</h2>
-    <p id="videoDesc">Deskripsi video...</p>
-  </div>
+  <main class="container">
+    <div class="player">
+      <video controls width="100%">
+        <source src="assets/videos/video1.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+      </video>
+    </div>
+
+    <div class="video-info">
+      <h2 id="videoTitle">Judul Video</h2>
+      <p id="videoDesc">Deskripsi video...</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Website Nonton Video</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
