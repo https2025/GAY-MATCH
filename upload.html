@@ -7,34 +7,47 @@
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>⬆️ Upload Video</h1>
-      <a href="index.html" class="btn back-btn">⬅️ Kembali</a>
-    </div>
-  </header>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">🎥 Streamify</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="upload.html">Upload</a></li>
+    </ul>
+  </nav>
 
-  <main class="container">
-    <form id="uploadForm">
-      <label for="title">Judul Video:</label>
-      <input type="text" id="title" required>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Admin Panel</h3>
+    <ul>
+      <li><a href="upload.html">⬆️ Upload Video</a></li>
+      <li><a href="index.html">🏠 Beranda</a></li>
+    </ul>
+  </aside>
 
-      <label for="description">Deskripsi:</label>
-      <textarea id="description" rows="4"></textarea>
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    <section class="upload-section">
+      <h2>⬆️ Upload Video Baru</h2>
+      <form id="uploadForm">
+        <label for="title">Judul Video:</label>
+        <input type="text" id="title" required />
 
-      <label for="videoFile">Pilih Video:</label>
-      <input type="file" id="videoFile" accept="video/*" required>
+        <label for="description">Deskripsi:</label>
+        <textarea id="description" rows="4" required></textarea>
 
-      <button type="submit" class="btn upload-btn">⬆️ Upload Video</button>
-    </form>
+        <label for="videoFile">Pilih Video:</label>
+        <input type="file" id="videoFile" accept="video/*" required />
+
+        <button type="submit" class="btn upload-btn">⬆️ Upload Video</button>
+      </form>
+    </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Website Nonton Video</p>
-    </div>
+  <footer class="footer">
+    <p>&copy; 2025 Streamify - Nonton Video Online</p>
   </footer>
 
-  <script src="admin.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
