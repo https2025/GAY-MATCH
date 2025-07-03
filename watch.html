@@ -7,31 +7,33 @@
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <h1>🎥 Nonton Video</h1>
-      <a href="index.html" class="btn back-btn">⬅️ Kembali</a>
-    </div>
-  </header>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">🎥 Streamify</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="upload.html">Upload</a></li>
+    </ul>
+  </nav>
 
-  <main class="container">
-    <div class="player">
+  <!-- MAIN CONTENT -->
+  <main class="main-content player-page">
+    <section class="player-container">
       <video controls width="100%">
-        <source src="assets/videos/video1.mp4" type="video/mp4">
+        <source src="assets/videos/video1.mp4" type="video/mp4" />
         Browser Anda tidak mendukung video.
       </video>
-    </div>
+    </section>
 
-    <div class="video-info">
+    <section class="video-info">
       <h2 id="videoTitle">Judul Video</h2>
       <p id="videoDesc">Deskripsi video...</p>
-    </div>
+      <a href="index.html" class="btn back-btn">⬅️ Kembali</a>
+    </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Website Nonton Video</p>
-    </div>
+  <footer class="footer">
+    <p>&copy; 2025 Streamify - Nonton Video Online</p>
   </footer>
 
   <script src="script.js"></script>
