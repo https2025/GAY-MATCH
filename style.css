@@ -1,98 +1,102 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-}
-
-header {
-  background: #007bff;
-  color: white;
-  padding: 1em;
-  text-align: center;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.video-card {
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.player {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-
 :root {
   --primary: #007bff;
-  --dark: #222;
+  --dark: #1a1a1a;
   --light: #fff;
-  --gray: #f9f9f9;
+  --bg-light: #f9f9f9;
+  --text-dark: #333;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--gray);
-  color: var(--dark);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-}
-
-header {
-  background-color: var(--primary);
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark);
   color: white;
   padding: 1em;
 }
 
-header h1 {
-  display: inline-block;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-header nav {
-  float: right;
-}
-
-header nav a {
+.nav-links a {
   color: white;
-  margin-left: 15px;
   text-decoration: none;
+  margin-left: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: var(--dark);
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.sidebar li a:hover {
+  color: var(--primary);
+}
+
+/* MAIN CONTENT */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+}
+
+.player-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero {
-  background: linear-gradient(to right, var(--primary), #0056b3);
-  color: white;
-  padding: 40px 20px;
   text-align: center;
+  padding: 30px 0;
 }
 
 .hero input[type="text"] {
   padding: 10px;
   width: 50%;
-  border: none;
+  max-width: 600px;
   border-radius: 5px;
-  margin-top: 10px;
+  border: 1px solid #ccc;
 }
 
-.video-grid {
+.video-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -119,32 +123,7 @@ header nav a {
 
 .card h3 {
   padding: 10px;
-  font-size: 18px;
-}
-
-.card .btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-  background-color: var(--primary);
-  color: white;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-
-.player {
-  margin: 30px 0;
-}
-
-video {
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.video-info {
-  margin-top: 20px;
+  font-size: 1.1rem;
 }
 
 .btn {
@@ -154,13 +133,45 @@ video {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
+  display: block;
+  width: 100%;
   text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
+  margin-top: 10px;
 }
 
 .btn:hover {
   background-color: #0056b3;
+}
+
+.footer {
+  background-color: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* UPLOAD PAGE */
+.upload-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.upload-section label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.upload-section input,
+.upload-section textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
 }
 
 .upload-btn {
@@ -170,11 +181,3 @@ video {
 .back-btn {
   background-color: #666;
 }
-
-footer {
-  background: var(--dark);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: 40px;
-                                                 }
