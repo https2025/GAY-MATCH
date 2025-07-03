@@ -2,26 +2,38 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Upload Video</title>
+  <title>⬆️ Upload Video</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>⬆️ Upload Video</h1>
+    <div class="container">
+      <h1>⬆️ Upload Video</h1>
+      <a href="index.html" class="btn back-btn">⬅️ Kembali</a>
+    </div>
   </header>
 
-  <form id="uploadForm">
-    <label>Judul:</label>
-    <input type="text" id="title" required><br>
+  <main class="container">
+    <form id="uploadForm">
+      <label for="title">Judul Video:</label>
+      <input type="text" id="title" required>
 
-    <label>Deskripsi:</label>
-    <textarea id="description"></textarea><br>
+      <label for="description">Deskripsi:</label>
+      <textarea id="description" rows="4"></textarea>
 
-    <label>Pilih Video:</label>
-    <input type="file" id="videoFile" accept="video/*"><br>
+      <label for="videoFile">Pilih Video:</label>
+      <input type="file" id="videoFile" accept="video/*" required>
 
-    <button type="submit">Upload</button>
-  </form>
+      <button type="submit" class="btn upload-btn">⬆️ Upload Video</button>
+    </form>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Website Nonton Video</p>
+    </div>
+  </footer>
 
   <script src="admin.js"></script>
 </body>
