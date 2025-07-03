@@ -1,13 +1,13 @@
 // Simulasi daftar video
-const videos = [
-  { id: 1, title: "Belajar HTML", description: "Video pembelajaran dasar-dasar HTML.", thumbnail: "assets/thumbnails/thumb1.jpg" },
-  { id: 2, title: "CSS Dasar", description: "Membuat tampilan website lebih cantik.", thumbnail: "assets/thumbnails/thumb2.jpg" }
-];
+let videos = [];
 
-// Fungsi: Muat daftar video
+// Fungsi: Muat semua video
 function loadVideos() {
   const grid = document.querySelector(".video-section");
   if (!grid) return;
+
+  // Kosongkan konten lama
+  grid.innerHTML = "";
 
   videos.forEach(video => {
     const card = document.createElement("div");
@@ -15,14 +15,14 @@ function loadVideos() {
     card.innerHTML = `
       <img src="${video.thumbnail}" alt="${video.title}">
       <h3>${video.title}</h3>
-      <p>Durasi: 5 menit</p>
+      <p>Durasi: ~5 menit</p>
       <a href="watch.html?video=${video.id}" class="btn">▶️ Tonton</a>
     `;
     grid.appendChild(card);
   });
 }
 
-// Fungsi: Load detail video di watch.html
+// Fungsi: Load detail video di halaman watch
 function loadVideoDetail() {
   const urlParams = new URLSearchParams(window.location.search);
   const videoId = urlParams.get('video');
@@ -32,11 +32,11 @@ function loadVideoDetail() {
     if (video) {
       document.getElementById("videoTitle").textContent = video.title;
       document.getElementById("videoDesc").textContent = video.description;
-      const source = document.querySelector("video source");
-      if (source) {
-        source.src = `assets/videos/video${video.id}.mp4`;
-        document.querySelector("video").load();
-      }
+
+      const player = document.querySelector(".player-container");
+      player.innerHTML = `
+        <iframe width="100%" height="500" src="${video.link}" frameborder="0" allowfullscreen></iframe>
+      `;
     } else {
       alert("Video tidak ditemukan.");
       window.location.href = "index.html";
@@ -59,6 +59,30 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = card.querySelector("h3").textContent.toLowerCase();
         card.style.display = title.includes(term) ? "block" : "none";
       });
+    });
+  }
+
+  // Handle form upload
+  const form = document.getElementById("uploadForm");
+  if (form) {
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const title = document.getElementById("title").value.trim();
+      const desc = document.getElementById("description").value.trim();
+      const link = document.getElementById("videoLink").value.trim();
+      const thumbnail = document.getElementById("thumbnail").value.trim();
+
+      if (!title || !desc || !link || !thumbnail) {
+        alert("Semua field harus diisi!");
+        return;
+      }
+
+      const id = Date.now(); // ID unik berdasarkan waktu
+      videos.push({ id, title, description: desc, link, thumbnail });
+
+      alert("Video berhasil ditambahkan!");
+      window.location.href = "index.html";
     });
   }
 });
