@@ -28,7 +28,7 @@
   <!-- MAIN CONTENT -->
   <main class="main-content">
     <section class="upload-section">
-      <h2>⬆️ Upload Video Baru</h2>
+      <h2>⬆️ Upload Video (via Link)</h2>
       <form id="uploadForm">
         <label for="title">Judul Video:</label>
         <input type="text" id="title" required />
@@ -36,10 +36,13 @@
         <label for="description">Deskripsi:</label>
         <textarea id="description" rows="4" required></textarea>
 
-        <label for="videoFile">Pilih Video:</label>
-        <input type="file" id="videoFile" accept="video/*" required />
+        <label for="videoLink">Link Video:</label>
+        <input type="url" id="videoLink" placeholder="https://example.com/video.mp4"  required />
 
-        <button type="submit" class="btn upload-btn">⬆️ Upload Video</button>
+        <label for="thumbnail">Thumbnail (URL):</label>
+        <input type="url" id="thumbnail" placeholder="https://example.com/thumb.jpg"  required />
+
+        <button type="submit" class="btn upload-btn">⬆️ Simpan Video</button>
       </form>
     </section>
   </main>
