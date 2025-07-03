@@ -27,6 +27,8 @@ window.onload = () => {
     loadVideos();
   }
 
+  
+  
   // Load detail video di halaman watch.html
   const urlParams = new URLSearchParams(window.location.search);
   const videoId = urlParams.get('video');
@@ -40,3 +42,18 @@ window.onload = () => {
     }
   }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBox = document.getElementById("searchBox");
+  const cards = document.querySelectorAll(".card");
+
+  if (searchBox) {
+    searchBox.addEventListener("input", function () {
+      const term = this.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = title.includes(term) ? "block" : "none";
+      });
+    });
+  }
+});
