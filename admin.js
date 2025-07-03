@@ -1,24 +1,14 @@
-document.getElementById("uploadForm").addEventListener("submit", function(e) {
+document.getElementById("uploadForm")?.addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const title = document.getElementById("title").value;
-  const desc = document.getElementById("description").value;
+  const title = document.getElementById("title").value.trim();
+  const desc = document.getElementById("description").value.trim();
   const file = document.getElementById("videoFile").files[0];
 
-  if (!file) return alert("Pilih video dulu!");
+  if (!title || !desc || !file) {
+    alert("Semua field harus diisi!");
+    return;
+  }
 
-  const reader = new FileReader();
-  reader.onload = function(event) {
-    localStorage.setItem("uploadedVideo", JSON.stringify({
-      id: Date.now(),
-      title,
-      description: desc,
-      src: event.target.result // Untuk simulasi, pakai base64
-    }));
-
-    alert("Video berhasil diupload!");
-    window.location.href = "index.html";
-  };
-
-  reader.readAsDataURL(file);
+  alert("Video berhasil diupload (simulasi)");
 });
