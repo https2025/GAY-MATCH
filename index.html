@@ -2,24 +2,53 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Nonton Video</title>
+  <title>🎥 Nonton Video</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header>
-    <h1>🎥 Nonton Video</h1>
-    <a href="upload.html">Upload Video</a>
+    <div class="container">
+      <h1>🎥 Nonton Video</h1>
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="upload.html">Upload</a>
+        <a href="#">Kategori</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="video-grid">
-    <div class="video-card">
-      <img src="assets/thumbnails/thumb1.jpg" alt="Thumbnail">
-      <h3>Judul Video 1</h3>
-      <p>Durasi: 05:00</p>
-      <a href="watch.html?id=1">Tonton</a>
+  <section class="hero">
+    <div class="container">
+      <h2>Cari Video Favoritmu</h2>
+      <input type="text" placeholder="Cari video..." id="searchBox">
     </div>
-    <!-- Tambahkan card video lain -->
-  </div>
+  </section>
+
+  <main class="container">
+    <div class="video-grid" id="videoGrid">
+      <!-- Video Card -->
+      <div class="card">
+        <img src="assets/thumbnails/thumb1.jpg" alt="Thumbnail">
+        <h3>Judul Video 1</h3>
+        <p>Durasi: 5 menit</p>
+        <a href="watch.html?video=1" class="btn">▶️ Tonton</a>
+      </div>
+
+      <div class="card">
+        <img src="assets/thumbnails/thumb2.jpg" alt="Thumbnail">
+        <h3>Judul Video 2</h3>
+        <p>Durasi: 10 menit</p>
+        <a href="watch.html?video=2" class="btn">▶️ Tonton</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Website Nonton Video</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
