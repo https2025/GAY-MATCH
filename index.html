@@ -2,59 +2,64 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>🎥 Nonton Video</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak Acak</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f3f3f3;
+    }
+    h1 {
+      color: #333;
+    }
+    #kontak {
+      font-size: 24px;
+      margin-top: 20px;
+      padding: 10px;
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
-<p>https://9c70d3ab-6024-4974-9bd1-8bb35197996c-00-316tzrjlx90uv.pike.replit.dev/dashboard</p>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">🎥 Streamify</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="upload.html">Upload</a></li>
-      <li><a href="#">Kategori</a></li>
-    </ul>
-  </nav>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <h3>Menu</h3>
-    <ul>
-      <li><a href="index.html">🏠 Beranda</a></li>
-      <li><a href="upload.html">⬆️ Upload Video</a></li>
-      <li><a href="#">📺 Rekomendasi</a></li>
-      <li><a href="#">🔍 Cari Video</a></li>
-    </ul>
-  </aside>
+  <h1>🎲 Dapatkan Kontak Acak</h1>
+  <div id="kontak">Klik tombol di bawah</div>
+  <br />
+  <button onclick="getRandomContact()">Ambil Kontak</button>
 
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
-    <section class="hero">
-      <input type="text" id="searchBox" placeholder="Cari video..." />
-    </section>
+  <script>
+    const kontakList = [
+      "+62 896-6456-7744",
+      "+62 812-3456-7890",
+      "+62 857-8888-9999",
+      "+62 821-1234-5678",
+      "+62 838-4321-1234"
+    ];
 
-    <section class="video-section">
-      <div class="card">
-        <img src="assets/thumbnails/thumb1.jpg" alt="Thumbnail 1" />
-        <h3>Judul Video 1</h3>
-        <p>Durasi: 5 menit</p>
-        <a href="watch.html?video=1" class="btn">▶️ Tonton</a>
-      </div>
+    function getRandomContact() {
+      const randomIndex = Math.floor(Math.random() * kontakList.length);
+      const kontak = kontakList[randomIndex];
+      document.getElementById("kontak").innerText = kontak;
+    }
+  </script>
 
-      <div class="card">
-        <img src="assets/thumbnails/thumb2.jpg" alt="Thumbnail 2" />
-        <h3>Judul Video 2</h3>
-        <p>Durasi: 10 menit</p>
-        <a href="watch.html?video=2" class="btn">▶️ Tonton</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2025 Streamify - Nonton Video Online</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
